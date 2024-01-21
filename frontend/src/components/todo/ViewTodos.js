@@ -434,14 +434,25 @@ function Todos({ isAuthenticated, setIsAuthenticated }) {
 		const dueDate = moment(targetDate);
 
 		if (dueDate.isBefore(today, 'day')) {
-			console.log("overdueeee")
 			return styles.overdue;
 		} else if (dueDate.isSame(today, 'day')) {
-			console.log("is due today")
 			return styles.dueToday;
 		} else {
 			return ''; // Default style for tasks without special priority
 		}
+	};
+
+	const getStatus = (targetDate, isCompleted) => {
+		const today = moment();
+		const dueDate = moment(targetDate);
+
+		if (dueDate.isBefore(today, 'day')) {
+			return "Overdue";
+		} else if (dueDate.isSame(today, 'day')) {
+			return "Due Today";
+		}
+		if(isCompleted) return "Completed";
+		return "";
 	};
 
 	const sortControl = () => {
@@ -517,7 +528,7 @@ function Todos({ isAuthenticated, setIsAuthenticated }) {
 				{todos.map((todo) => (
 					<Grid item key={todo.id}>
 						<Card className={`${styles.box} ${todo.isCompleted ? styles.completed : ''} ${getPriorityStyle(todo.targetDate)}`}>
-							<Todo todo={todo} markCompleted={markCompleted} deleteTodo={deleteTodo}/>
+							<Todo todo={todo} markCompleted={markCompleted} deleteTodo={deleteTodo} status={getStatus(todo.targetDate, todo.isCompleted)}/>
 						</Card>
 					</Grid>
 				))}

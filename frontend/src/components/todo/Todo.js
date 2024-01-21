@@ -8,9 +8,8 @@ import Card from '@mui/material/Card';
 
 import styles from './Todo.module.css';
 
-function Todo({ todo, markCompleted, deleteTodo }) {
+function Todo({ todo, markCompleted, deleteTodo, status }) {
     return (
-        // <Card className={styles.box}>
         <div className={styles.todoContainer}>
 
             <div className={styles.todo}>
@@ -26,18 +25,22 @@ function Todo({ todo, markCompleted, deleteTodo }) {
                 <p className={styles.description}>{todo.description}</p>
             </div>
 
-            <div className={styles.actions}>
-                <Link to={{pathname: `/update/${todo.id}`}}>
-                    <button className="btn btn-primary">
-                        <EditIcon/>
+            <div className={styles.footer}>
+                <div className={styles.status}>{status}</div>
+                <div className={styles.actions}>
+                    <Link to={{pathname: `/update/${todo.id}`}}>
+                        <button className="btn btn-primary">
+                            <EditIcon/>
+                        </button>
+                    </Link>
+                    <button className="btn btn-danger" onClick={() => deleteTodo(todo.id)}>
+                        <DeleteIcon/>
                     </button>
-                </Link>
-                <button className="btn btn-danger" onClick={() => deleteTodo(todo.id)}>
-                    <DeleteIcon/>
-                </button>
+                </div>
             </div>
+
+
         </div>
-        // </Card>
     );
 }
 

@@ -18,9 +18,9 @@
 }
 
 .actions {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 8px; /* Adjust as needed */
+    /*display: flex;*/
+    /*justify-content: flex-end;*/
+    /*margin-top: 8px; !* Adjust as needed *!*/
 }
 
 .titleContainer {
@@ -50,4 +50,22 @@
 
 .checkbox:hover {
     cursor: pointer;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.status {
+    /* styles for status element */
+}
+
+.actions {
+    margin-left: auto;
+}
+
+.actions button {
+    /* styles for buttons inside actions */
 }
