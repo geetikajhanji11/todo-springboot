@@ -1,0 +1,101 @@
+/* ViewTodos.module.css */
+
+/*.box {*/
+/*    height: 300px;*/
+/*    width: 300px;*/
+/*    padding: 16px;*/
+/*    margin-bottom: 16px;*/
+/*    background-color: #fff;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*    max-width: 300px; !* Adjust as needed *!*/
+/*    margin: auto; !* Center the box *!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: flex-start;*/
+/*}*/
+
+.box {
+    height: 300px;
+    width: 300px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: lightgrey;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Adjust as needed */
+    /*margin: auto; !* Center the box *!*/
+    display: flex;
+    flex-direction: column;
+    /*align-items: center; !* Center content horizontally *!*/
+
+}
+
+.completed {
+    background-color: lightgreen !important;
+}
+
+
+.iconbox {
+    height: 300px;
+    width: 300px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Adjust as needed */
+    /*margin: auto; !* Center the box *!*/
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+.iconContainer {
+    text-align: center;
+}
+
+.addIcon {
+    font-size: 60px; /* Adjust the size as needed */
+    color: #555; /* Adjust the color as needed */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.checkbox {
+    margin-right: 8px;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.dueDate {
+    font-size: 14px;
+    color: #888;
+}
+
+.description {
+    margin-top: 8px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+
+
+
+
+

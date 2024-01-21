@@ -1,0 +1,53 @@
+.todoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between; /* Add this line */
+    height: 100%; /* Add this line */
+}
+
+.todo {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px; /* Adjust as needed */
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.dueDate {
+    font-size: 14px;
+    color: #888;
+}
+
+.description {
+    margin-top: 8px;
+}
+
+.checkbox {
+    margin-right: 8px;
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
