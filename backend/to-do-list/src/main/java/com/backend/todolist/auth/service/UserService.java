@@ -43,13 +43,17 @@ public class UserService {
 	        
 	        User _user = new User(username, passwordEncoder.encode(password));
 	        _user = userRepository.save(_user);
-	        
-	        String token = jwtTokenGenerator.createToken(_user.getUsername(), _user.getRoleAsList());
-	        
+
+			String token = jwtTokenGenerator.createToken(_user.getUsername(), _user.getRoleAsList());
+
 			return new UserSignupResponse(username, token);
-		} catch (AuthenticationException e) {
-            throw new BadCredentialsException("Invalid username/password");
-        }
+		}  catch (Exception e) {
+			e.printStackTrace();
+			throw new BadRequestException("Failed to sign up user");
+		}
+//		catch (AuthenticationException e) {
+//			throw new BadCredentialsException("Invalid username/password");
+//		}
 	}
 	
 	public UserSigninResponse signin(UserSigninRequest userSigninRequest) {

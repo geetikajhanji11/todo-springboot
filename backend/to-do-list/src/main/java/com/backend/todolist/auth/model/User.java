@@ -3,20 +3,18 @@ package com.backend.todolist.auth.model;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue
     private Long id;
     
     @NotEmpty(message = "Username is required")
-    @Column(unique = true)
+//    @Column(unique = true)
     private String username;
     
     @NotEmpty(message = "Password is required")
@@ -67,7 +65,7 @@ public class User {
 		return role;
 	}
 
-	public void setRoles(String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 }
